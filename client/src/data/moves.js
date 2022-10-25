@@ -1,9 +1,9 @@
 const moves = [
   {
     id: 1,
-    name: 'Darce',
+    name: "D'Arce",
     imgUrl:
-      'https://bjj-world.com/wp-content/uploads/2020/08/Tyron-woodley-Submission-Win-Over-Darren-Till-696x392_1024x1024.jpg'
+      'https://cdn.mmaweekly.com/wp-content/uploads/2020/04/Tony-ferguson-darce-750.jpg'
   },
   {
     id: 2,
