@@ -23,7 +23,6 @@ const App = () => {
     const createdMove = {
       ...newMove,
       id: parseInt(moves.length + 1)
-      // price: parseInt(newMove.x)
     }
     currentMoves.push(createdMove)
     setMoves(currentMoves)
@@ -57,12 +56,6 @@ const App = () => {
       </main>
     </div>
   )
-
-  // return (
-  //   <div className="App">
-  //     <div>myProject, it works</div>
-  //   </div>
-  // )
 }
 
 export default App
