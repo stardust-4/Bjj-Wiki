@@ -15,8 +15,20 @@ const getMoves = async (req, res) => {
 const getMoveById = (req, res) => {
   res.send({ move: `move with an id of ${req.params.id}` })
 }
+// const createMove = async (req, res) => {
+//   res.send(req.body)
+// }
+
 const createMove = async (req, res) => {
-  res.send(req.body)
+  try {
+    const bjjMove = await new BjjMove(req.body)
+    await bjjMove.save()
+    return res.status(201).json({
+      bjjMove
+    })
+  } catch (error) {
+    return res.status(500).json({ error: error.message })
+  }
 }
 
 module.exports = {
