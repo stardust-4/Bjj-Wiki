@@ -42,10 +42,21 @@ const deleteMove = async (req, res) => {
     return res.status(500).send(error.message)
   }
 }
-
+const updateMove = async (req, res) => {
+  const { id } = req.params
+  try {
+    const bjjMove = await BjjMove.findOneAndUpdate({ id }, req.body, {
+      new: true
+    })
+    res.status(200).json(bjjMove)
+  } catch (error) {
+    return res.status(500).send(error.message)
+  }
+}
 module.exports = {
   getMoves,
   getMoveById,
   createMove,
-  deleteMove
+  deleteMove,
+  updateMove
 }
