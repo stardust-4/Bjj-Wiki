@@ -1,14 +1,20 @@
 import { useNavigate, Link } from "react-router-dom"
+import axios from 'axios'
 
 const Home = (props) => {
   let navigate = useNavigate()
-  const showMove = (move) => {
+  const showMove = async (move) => {
+    console.log(`${move.id}`)
     navigate(`${move.id}`)
+    console.log(await axios.get(
+      `http://localhost:3001/move/${move.id}`
+    ))
+    // document.querySelector('div').innerHTML = `<img src =${move.imgUrl}>`
+
       }
 
   return (
   <div className="move-grid">
-    {/* <main>Home</main> */}
     {
       props.moves.map((move) => (
         <>

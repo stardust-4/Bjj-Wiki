@@ -1,7 +1,3 @@
-// const express = require('express')
-// const moves = require('./moves')
-// const PORT = process.env.PORT || 3001
-// const app = express()
 const mongoose = require('mongoose')
 
 require('dotenv').config()

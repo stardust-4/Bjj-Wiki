@@ -15,7 +15,7 @@ const getMoves = async (req, res) => {
 const getMoveById = (req, res) => {
   res.send({ move: `move with an id of ${req.params.id}` })
 }
-const createMove = (req, res) => {
+const createMove = async (req, res) => {
   res.send(req.body)
 }
 
