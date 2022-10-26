@@ -40,7 +40,7 @@ const moves = [
   },
   {
     id: 8,
-    name: 'Toe hold',
+    name: 'Toe Hold',
     imgUrl:
       'http://cdn.shopify.com/s/files/1/1800/2299/articles/Mahamed-Aly_1024x1024.jpg?v=1543944824'
   },
@@ -72,6 +72,12 @@ const moves = [
     name: 'Peruvian Necktie',
     imgUrl:
       'http://cdn3.sbnation.com/imported_assets/637633/dollawaytaylor.aim640.jpg'
+  },
+  {
+    id: 14,
+    name: 'North South',
+    imgUrl:
+      'https://www.bjjee.com/wp-content/uploads/2020/03/marcelo-garcia-north-south.jpg'
   }
 ]
 

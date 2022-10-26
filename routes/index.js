@@ -1,3 +1,9 @@
-app.get('/', moveController.getMoves)
-app.get('/move/:id', moveController.getMoveById)
-app.post('/create', moveController.createMove)
+const { Router } = require('express')
+const router = Router()
+const moveController = require('../controllers/moveController')
+
+router.get('/moves', moveController.getMoves)
+router.get('/move/:id', moveController.getMoveById)
+router.post('/create', moveController.createMove)
+
+module.exports = router

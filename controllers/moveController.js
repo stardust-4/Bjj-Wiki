@@ -2,10 +2,9 @@
 // const getMoves = (req, res) => {
 //   res.send({ myMovesDb })
 // }
-const { BjjMove } = require('../models/bjjMove')
+const BjjMove = require('../models/bjjMove')
 
 const getMoves = async (req, res) => {
-  res.send({ msg: 'getting the moves' })
   try {
     const moves = await BjjMove.find()
     return res.status(200).json({ moves })
@@ -19,13 +18,6 @@ const getMoveById = (req, res) => {
 const createMove = (req, res) => {
   res.send(req.body)
 }
-// const getMoveById = (req, res, next) => {   console.log('middleware run')
-// next()
-// },
-// (req, res) => {
-// res.send({ move: `move with an id of ${req.params.id}` })
-
-// }
 
 module.exports = {
   getMoves,
