@@ -2,7 +2,7 @@ const { Schema } = require('mongoose')
 
 const BjjMoveDetails = new Schema(
   {
-    made_famous_by: { type: String, required: false },
+    category: { type: String, required: true },
     description: { type: String, required: true }
   },
   { timestamps: true }
