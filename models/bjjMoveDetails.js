@@ -1,6 +1,18 @@
-const { Schema } = require('mongoose')
+// const { Schema } = require('mongoose')
 
-const BjjMoveDetails = new Schema(
+// const BjjMoveDetails = new Schema(
+//   {
+//     category: { type: String, required: true },
+//     description: { type: String, required: true }
+//   },
+//   { timestamps: true }
+// )
+
+// module.exports = BjjMoveDetails
+
+const mongoose = require('mongoose')
+
+const BjjMoveDetails = new mongoose.Schema(
   {
     category: { type: String, required: true },
     description: { type: String, required: true }
@@ -8,4 +20,4 @@ const BjjMoveDetails = new Schema(
   { timestamps: true }
 )
 
-module.exports = BjjMoveDetails
+module.exports = mongoose.model('BjjMoveDetails', BjjMoveDetails)

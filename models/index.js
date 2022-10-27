@@ -1,5 +1,5 @@
 const mongoose = require('mongoose')
-const BjjMoveDetailsSchema = require('./models/bjjMoveDetails')
+const BjjMoveDetailsSchema = require('./bjjMoveDetails')
 const BjjMoveSchema = require('./bjjMove')
 
 const BjjMoveDetails = mongoose.model('BjjMoveDetails', BjjMoveDetailsSchema)

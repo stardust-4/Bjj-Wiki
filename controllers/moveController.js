@@ -1,4 +1,15 @@
 const BjjMove = require('../models/bjjMove')
+const BjjMoveDetails = require('../models/bjjMoveDetails')
+
+const getMoveDetails = async (req, res) => {
+  try {
+    const details = await BjjMoveDetails.find()
+    return res.status(200).json({ details })
+  } catch (error) {
+    return res.status(500).send(error.message)
+  }
+}
+
 const getMoves = async (req, res) => {
   try {
     const moves = await BjjMove.find()
@@ -58,5 +69,6 @@ module.exports = {
   getMoveById,
   createMove,
   deleteMove,
-  updateMove
+  updateMove,
+  getMoveDetails
 }

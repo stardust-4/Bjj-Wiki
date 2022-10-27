@@ -1,9 +1,15 @@
 const db = require('./db/moves')
-const { BjjMove, BjjMoveDetails } = require('./models')
+// const dbd = require('/db/details')
+const { BjjMove } = require('./models')
+const { BjjMoveDetails } = require('./models')
 
 const findMove = async () => {
   const bjjMove = await BjjMove.findOne()
   console.log(bjjMove)
+}
+const findMoveDetails = async () => {
+  const bjjMoveDetails = await BjjMoveDetails.findOne()
+  console.log(bjjMoveDetails)
 }
 
 const main = async () => {
@@ -15,4 +21,14 @@ const main = async () => {
     await db.close()
   }
 }
+const mainDetails = async () => {
+  try {
+    await findMoveDetails()
+  } catch (error) {
+    console.log(error)
+  } finally {
+    await db.close()
+  }
+}
 main()
+mainDetails()

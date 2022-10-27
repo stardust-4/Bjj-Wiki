@@ -12,18 +12,6 @@ app.use(express.json())
 app.use(express.urlencoded({ extended: false }))
 app.use('/', routes)
 
-// app.get(
-//   '/move/:id',
-//   (req, res, next) => {
-//     console.log('middleware run')
-//     next()
-//   },
-//   (req, res) => {
-//     res.send({ move: `move with an id of ${req.params.id}` })
-//   }
-// )
-
-// Your Code Ends Here
 db.on('error', console.error.bind(console, 'mongo db connection error'))
 app.listen(PORT, () => {
   console.log(`expres server listening on port ${PORT}`)
