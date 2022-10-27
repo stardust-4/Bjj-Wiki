@@ -1,19 +1,13 @@
-import { useNavigate, Link, resolvePath } from "react-router-dom"
+import { useNavigate, Link, useRouteLoaderData} from "react-router-dom"
 import axios from 'axios'
 import { useEffect, useState } from "react"
-// const api = axios.create({baseURL: `http://localhost:3001/moves`})
-
-const Home = (
-  props
-  ) => {
+const api = axios.create({baseURL:`http://localhost:3001/moves/`})
+const Home = (props) => {
   let navigate = useNavigate()
-  const showMove = async (move) => {
-    navigate(`${move.id}`)
-    console.log(await axios.get(
-      `http://localhost:3001/move/${move.id}`
-    ))
-    // document.querySelector('div').innerHTML = `<img src =${move.imgUrl}>`
+  const showMoveDetails = (move) => {
+    navigate(`move/${move.id}`)
 }
+
 const [moves, setMoves] = useState([{name: 1}]);
 // Get/Read
 useEffect(()=>{
@@ -30,6 +24,12 @@ useEffect(()=>{
 getMoves()
 },[])
 
+const deleteMove = (id) => {
+  axios.delete(
+    `http://localhost:3001/delete/${id}`)
+    window.location.reload();
+    return false;}
+
   return (
   <div className="move-grid">
     {
@@ -38,9 +38,12 @@ getMoves()
     
       moves.map((move, index) => (
         
-        <div className="move-card" onClick={() => showMove(move)} key={index}>
+        <div className="move-card" 
+        // onClick={() => showMoveDetails(move)} 
+        key={index}>
           <img style={{ display: 'block' }} src={move.imgUrl} alt={move.name} />
           <h3>{move.name}</h3>
+          <button onClick={()=>{deleteMove(move.id)}}>x</button>
         </div>
         
       ))}
