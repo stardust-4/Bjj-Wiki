@@ -1,13 +1,9 @@
 import { useNavigate, Link, useRouteLoaderData} from "react-router-dom"
 import axios from 'axios'
 import { useEffect, useState } from "react"
-const api = axios.create({baseURL:`http://localhost:3001/moves/`})
+// const api = axios.create({baseURL:`http://localhost:3001/moves/`})
 const Home = (props) => {
-  let navigate = useNavigate()
-  const showMoveDetails = (move) => {
-    navigate(`move/${move.id}`)
-}
-
+let navigate = useNavigate()
 const [moves, setMoves] = useState([{name: 1}]);
 // Get/Read
 useEffect(()=>{
@@ -23,7 +19,6 @@ useEffect(()=>{
 }
 getMoves()
 },[])
-
 const deleteMove = (id) => {
   axios.delete(
     `http://localhost:3001/delete/${id}`)
@@ -34,16 +29,15 @@ const deleteMove = (id) => {
   <div className="move-grid">
     {
       // props.if
-      moves.length>0&&
+      // moves.length>0&&
     
       moves.map((move, index) => (
         
-        <div className="move-card" 
-        // onClick={() => showMoveDetails(move)} 
-        key={index}>
+        <div className="move-card" key={index}>
           <img style={{ display: 'block' }} src={move.imgUrl} alt={move.name} />
           <h3>{move.name}</h3>
           <button onClick={()=>{deleteMove(move.id)}}>x</button>
+          {/* <button>edit</button> */}
         </div>
         
       ))}
