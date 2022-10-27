@@ -1,4 +1,4 @@
-import { useNavigate, Link } from "react-router-dom"
+import { useNavigate, Link, resolvePath } from "react-router-dom"
 import axios from 'axios'
 import { useEffect, useState } from "react"
 // const api = axios.create({baseURL: `http://localhost:3001/moves`})
@@ -14,15 +14,15 @@ const Home = (
     ))
     // document.querySelector('div').innerHTML = `<img src =${move.imgUrl}>`
 }
-const [moves, setMoves] = useState([]);
+const [moves, setMoves] = useState([{name: 1}]);
 // Get/Read
 useEffect(()=>{
   const getMoves = async () => {
     try {
       const response = await axios.get(
         `http://localhost:3001/moves/`)
-        setMoves(response.data)
-        console.log(response.data)
+        setMoves(response.data.moves);
+        console.log(response.data.moves);
     } catch (error) {
       console.log(error)
     }
@@ -36,9 +36,9 @@ getMoves()
       // props.if
       moves.length>0&&
     
-      moves.map((move) => (
+      moves.map((move, index) => (
         
-        <div className="move-card" onClick={() => showMove(move)} key={move._id}>
+        <div className="move-card" onClick={() => showMove(move)} key={index}>
           <img style={{ display: 'block' }} src={move.imgUrl} alt={move.name} />
           <h3>{move.name}</h3>
         </div>
