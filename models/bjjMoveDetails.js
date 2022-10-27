@@ -14,6 +14,7 @@ const mongoose = require('mongoose')
 
 const BjjMoveDetails = new mongoose.Schema(
   {
+    id: { type: Number, required: true },
     category: { type: String, required: true },
     description: { type: String, required: true }
   },

@@ -9,6 +9,58 @@ const getMoveDetails = async (req, res) => {
     return res.status(500).send(error.message)
   }
 }
+const getMoveDetailById = async (req, res) => {
+  try {
+    const { id } = req.params
+    const bjjMoveDetails = await BjjMoveDetails.findOne({ id })
+    if (bjjMoveDetails) {
+      return res.status(200).json({ bjjMoveDetails })
+    }
+    return res.status(404).send('BjjMove with the specified ID does not exists')
+  } catch (error) {
+    return res.status(500).send(error.message)
+  }
+}
+const createMoveDetail = async (req, res) => {
+  try {
+    const bjjMoveDetails = await new BjjMoveDetails(req.body)
+    await bjjMoveDetails.save()
+    return res.status(201).json({
+      bjjMoveDetails
+    })
+  } catch (error) {
+    return res.status(500).json({ error: error.message })
+  }
+}
+const deleteMoveDetail = async (req, res) => {
+  try {
+    const { id } = req.params
+    const deleted = await BjjMoveDetails.findOneAndDelete({ id })
+    if (deleted) {
+      return res.status(200).send('BjjMoveDetails deleted')
+    }
+    throw new Error('BjjMove not found')
+  } catch (error) {
+    return res.status(500).send(error.message)
+  }
+}
+const updateMoveDetail = async (req, res) => {
+  const { id } = req.params
+  try {
+    const bjjMoveDetail = await BjjMoveDetails.findOneAndUpdate(
+      { id },
+      req.body,
+      {
+        new: true
+      }
+    )
+    res.status(200).json(bjjMoveDetail)
+  } catch (error) {
+    return res.status(500).send(error.message)
+  }
+}
+
+/////////////////////////////////////////
 
 const getMoves = async (req, res) => {
   try {
@@ -70,5 +122,9 @@ module.exports = {
   createMove,
   deleteMove,
   updateMove,
-  getMoveDetails
+  getMoveDetails,
+  getMoveDetailById,
+  createMoveDetail,
+  deleteMoveDetail,
+  updateMoveDetail
 }
