@@ -20,14 +20,14 @@ app.use('/', routes)
 /////form//////
 
 // app.get('/moves', async (req, res) => {
-//   let issues = await BjjMove.find({})
-//   res.send(issues)
+//   let moves = await BjjMove.find({})
+//   res.send(moves)
 // })
 
 // app.post('/moves', async (req, res) => {
 //   console.log('here is the body', req.body)
-//   let newIssue = await BjjMove.create(req.body)
-//   res.send(newIssue)
+//   let newMove = await BjjMove.create(req.body)
+//   res.send(newMove)
 // })
 
 ////form/////

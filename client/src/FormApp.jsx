@@ -3,13 +3,13 @@ import { useState, useEffect } from 'react'
 import axios from 'axios'
 import MoveForm from './components/MoveForm'
 
-function FormApp() {
+const FormApp = () => {
   const [issues, setIssues] = useState([])
 
   useEffect(() => {
     const getIssues = async () => {
       try {
-        let res = await axios.get('http://localhost:3001/issues')
+        let res = await axios.get('http://localhost:3001/moves')
         console.log(res.data)
         setIssues(res.data)
       } catch (err) {

@@ -10,13 +10,12 @@ import { Routes, Route } from 'react-router-dom'
 
 const App = () => {
   const [moves, setMoves] = useState(movesArray)
-  const [newMove, setNewMove] = useState({
-    id: '',
-    name: '',
-    img: '',
-    description: '',
-    price: ''
-  })
+  // const [newMove, setNewMove] = useState({
+  //   id: '',
+  //   name: '',
+  //   img: '',
+  //   description: ''
+  // })
 
   // const addMove = (e) => {
   //   e.preventDefault()
