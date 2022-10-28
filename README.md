@@ -6,7 +6,7 @@
 
 This project is a wiki of BJJ moves along with helpful descriptions and image references.
 
-![Image](https://www.wikihow.com/images/thumb/f/f2/Learn-Brazilian-Jiu%E2%80%90Jitsu-Step-8.jpg/v4-460px-Learn-Brazilian-Jiu%E2%80%90Jitsu-Step-8.jpg.webp)
+![Image](img1.png)
 
 ## Getting Started
 
