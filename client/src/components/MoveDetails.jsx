@@ -8,7 +8,7 @@ useEffect(()=>{
   const getMoves = async () => {
     try {
       const response = await axios.get(
-        `http://localhost:3001/details/`)
+        `http://localhost:3001/details`)
         setMoves(response.data.details);
         console.log(response.data.details);
     } catch (error) {

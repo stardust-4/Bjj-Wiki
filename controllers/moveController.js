@@ -96,7 +96,7 @@ const createMove = async (req, res) => {
 const deleteMove = async (req, res) => {
   try {
     const { id } = req.params
-    const deleted = await BjjMove.findOneAndDelete({ id })
+    const deleted = await BjjMove.findByIdAndDelete(id)
     if (deleted) {
       return res.status(200).send('BjjMove deleted')
     }
@@ -108,7 +108,7 @@ const deleteMove = async (req, res) => {
 const updateMove = async (req, res) => {
   const { id } = req.params
   try {
-    const bjjMove = await BjjMove.findOneAndUpdate({ id }, req.body, {
+    const bjjMove = await BjjMove.findByIdAndUpdate(id, req.body, {
       new: true
     })
     res.status(200).json(bjjMove)
