@@ -9,22 +9,16 @@ const initialState = {
   imgUrl:''
 }
 const [formState, setFormState] = useState(initialState);
-
 const handleSubmit = event => {
   event.preventDefault();
   // do something with the data in the component state
-
   // axios.post()
   let result = axios.post('http://localhost:3001/create', formState)
-
 console.log(result.data)
   // console.log(formState);
   // clear the form
   setFormState(initialState);
 };
-
-
-
 const handleChange = event => {
   setFormState({ ...formState, [event.target.id]: event.target.value });
 };

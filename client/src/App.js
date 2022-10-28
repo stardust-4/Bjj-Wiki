@@ -7,6 +7,7 @@ import Nav from './components/Nav'
 import FormApp from './components/MoveForm'
 
 import { Routes, Route } from 'react-router-dom'
+import Edit from './components/Edit'
 
 const App = () => {
   const [moves, setMoves] = useState(movesArray)
@@ -53,6 +54,7 @@ const App = () => {
             }
           /> */}
           <Route path="new" element={<FormApp />} />
+          <Route path="/update/:id" element={<Edit />} />
         </Routes>
       </main>
     </div>
