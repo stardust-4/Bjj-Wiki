@@ -18,7 +18,10 @@ const MoveCard = (props) => {
         style={{ display: 'block' }}
         src={props.move.imgUrl}
         alt={props.move.name}
-      />
+      />{' '}
+      <button className="editButton" onClick={toggleForm}>
+        &#x270D;
+      </button>
       <h3>{props.move.name}</h3>
       <button
         className="deleteButton"
@@ -27,9 +30,6 @@ const MoveCard = (props) => {
         }}
       >
         &#x2620;
-      </button>
-      <button className="editButton" onClick={toggleForm}>
-        &#x270D;
       </button>
       {editing ? (
         <EditForm

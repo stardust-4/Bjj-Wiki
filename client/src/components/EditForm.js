@@ -12,7 +12,7 @@ const EditForm = (props) => {
     props.getMoves()
   }
   return (
-    <form onSubmit={handleSubmit}>
+    <form className="form" onSubmit={handleSubmit}>
       <label htmlFor="id">id: </label>
       <input
         id="id"

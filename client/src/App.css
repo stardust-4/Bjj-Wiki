@@ -47,14 +47,14 @@ h2 {
 h1 {
   font-family: 'Georgia';
   margin-block: -70px;
-  overflow-wrap: break-word;
+  ;
 
 }
 
 h1, h2, h3, h4 {
   display: block;
   position: absolute;
-  overflow-wrap: break-word;
+;
 
 }
 
@@ -114,6 +114,7 @@ h1, h2, h3, h4 {
     height: 150px;
     object-fit: contain;
     margin-block: -100px;
+    position: relative;
   }
 footer {
   position:fixed;
@@ -130,18 +131,23 @@ footer a {
 }
 
 .deleteButton {
+  /* margin-top: -120px;
+  margin-left: 35px; */
   display: block;
   width: 30px;
   height: 30px;
   font-size: x-large;
   background-color: #50dca9;
+  margin-top: 100px;
+
 }
   
 .editButton {
-  display: block;
+  display: inline;
   background-color: #ffb1ff;
   width: 30px;
   height: 30px;
+  margin-top: 100px;
 }
 
 .move-card h3 {
@@ -149,11 +155,15 @@ footer a {
   margin-block: 50px;
   /* font-size: small; */
 text-align: center;
-overflow-wrap: break-word;}
-
-.move-card div {
-  overflow-wrap: break-word;
 }
 
 
 
+.poopie {
+  margin-top: 50px;
+}
+
+.form {
+  margin-top: -100px;
+  margin-left: -60px;
+}
