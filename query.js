@@ -14,16 +14,16 @@ const findMoveDetails = async () => {
 
 /////form//////
 
-app.get('/moves', async (req, res) => {
-  let issues = await BjjMove.find({})
-  res.send(issues)
-})
+// app.get('/moves', async (req, res) => {
+//   let issues = await BjjMove.find({})
+//   res.send(issues)
+// })
 
-app.post('/moves', async (req, res) => {
-  console.log('here is the body', req.body)
-  let newIssue = await BjjMove.create(req.body)
-  res.send(newIssue)
-})
+// app.post('/moves', async (req, res) => {
+//   console.log('here is the body', req.body)
+//   let newIssue = await BjjMove.create(req.body)
+//   res.send(newIssue)
+// })
 
 ////form/////
 const main = async () => {

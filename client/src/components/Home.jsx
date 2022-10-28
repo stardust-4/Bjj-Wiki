@@ -24,7 +24,22 @@ const deleteMove = (id) => {
     `http://localhost:3001/delete/${id}`)
     window.location.reload();
     return false;}
-
+///////// w3 modal /////////
+    // var modal = document.getElementById("myModal");
+    // var btn = document.getElementById("myBtn");
+    // var span = document.getElementsByClassName("close")[0];
+    // btn.onclick = function() {
+    //   modal.style.display = "block";
+    // }
+    // span.onclick = function() {
+    //   modal.style.display = "none";
+    // }
+    // window.onclick = function(event) {
+    //   if (event.target == modal) {
+    //     modal.style.display = "none";
+    //   }
+    // }
+///////////// w3 modal //////////
   return (
   <div className="move-grid">
     {
@@ -37,7 +52,8 @@ const deleteMove = (id) => {
           <img style={{ display: 'block' }} src={move.imgUrl} alt={move.name} />
           <h3>{move.name}</h3>
           <button onClick={()=>{deleteMove(move.id)}}>x</button>
-          {/* <button>edit</button> */}
+          
+
         </div>
         
       ))}
