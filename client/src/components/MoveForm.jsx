@@ -25,7 +25,7 @@ const handleChange = event => {
 
   return ( 
   <div>
-    <h1>New Addition Move Form</h1>
+    <h1 className="poopie">New Addition Move Form</h1>
     <form onSubmit={handleSubmit}>
       <label htmlFor="id">id: </label>
       <input

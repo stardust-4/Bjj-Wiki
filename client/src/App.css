@@ -19,7 +19,7 @@ code {
 div {
   background-size: cover;
 }  
-.moves, .home, .home div, .move-card, .navbar {
+.home, .home div, .move-card, .navbar {
   display: flex;
 } 
 
@@ -45,11 +45,17 @@ h2 {
 }
 
 h1 {
-  font-family: 'Georgia'
+  font-family: 'Georgia';
+  margin-block: -70px;
+  overflow-wrap: break-word;
+
 }
 
 h1, h2, h3, h4 {
-  margin: 0;
+  display: block;
+  position: absolute;
+  overflow-wrap: break-word;
+
 }
 
 .navbar {
@@ -80,6 +86,7 @@ h1, h2, h3, h4 {
   justify-content: space-around;
   height: fit-content;
   width: fit-content;
+  justify-content: center;
 }
 .move-card {
   padding: 140px;
@@ -93,6 +100,7 @@ h1, h2, h3, h4 {
   color: #4d6a91;
   font-family: 'Georgia';
   cursor: pointer;
+  overflow-wrap: break-word;
 }
 .move-card img {
   /* width: 205px;
@@ -135,4 +143,17 @@ footer a {
   width: 30px;
   height: 30px;
 }
+
+.move-card h3 {
+  color: #0E46A1;
+  margin-block: 50px;
+  /* font-size: small; */
+text-align: center;
+overflow-wrap: break-word;}
+
+.move-card div {
+  overflow-wrap: break-word;
+}
+
+
 

@@ -26,8 +26,8 @@ return (
       moves.map((move, index) => (
         
         <div className="move-card" key={index}>
-          <h1>{move.category}</h1>
-          <h3>{move.description}</h3>
+          <h1 className='deets'>{move.category}</h1>
+          <h3 className='deeets'>{move.description}</h3>
         </div>
         
       ))}
